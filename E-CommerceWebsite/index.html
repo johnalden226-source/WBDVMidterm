@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CartNova</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="navbar">
+    <h2>CartNova 🛒</h2>
+    <div>
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">Track Order</a>
+        <a href="login.html">Logout</a>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="sidebar">
+        <h3>Categories</h3>
+        <p>📱 Electronics</p>
+        <p>👟 Shoes</p>
+        <p>🎧 Accessories</p>
+    </div>
+
+    <div class="products">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9">
+            <h4>Smartphone</h4>
+            <p>₱15,000</p>
+            <button onclick="addToCart('Smartphone')">Add to Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff">
+            <h4>Sneakers</h4>
+            <p>₱3,500</p>
+            <button onclick="addToCart('Sneakers')">Add to Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1518443895914-6c8d3c1b4c42">
+            <h4>Headphones</h4>
+            <p>₱2,000</p>
+            <button onclick="addToCart('Headphones')">Add to Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1585386959984-a4155223168b">
+            <h4>Smart Watch</h4>
+            <p>₱4,500</p>
+            <button onclick="addToCart('Smart Watch')">Add to Cart</button>
+        </div>
+
+    </div>
+
+    <div class="cart">
+        <h3>🛒 Cart</h3>
+        <ul id="cartList"></ul>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
