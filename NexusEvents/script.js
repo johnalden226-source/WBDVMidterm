@@ -1,108 +1,93 @@
 let cart = [];
+let guestlistEvent = '';
 
 function scrollToEvents() {
-document.getElementById('events').scrollIntoView({ behavior: 'smooth' });
+  document.getElementById('events').scrollIntoView({ behavior: 'smooth' });
 }
 
-function orderTicket(eventName) {
-cart = [{ name: eventName, price: 49, quantity: 1 }];
-updateCartDisplay();
-document.getElementById('cartModal').style.display = 'block';
+function orderTicket(name, price) {
+  addToCart(name, price);
+  openCart();
 }
 
-function addToCart(ticketType, price) {
-const existingItem = cart.find(item => item.name === ticketType);
-
-if (existingItem) {
-existingItem.quantity += 1;
-} else {
-cart.push({ name: ticketType, price, quantity: 1 });
+function addToCart(name, price) {
+  cart.push({ name, price });
+  updateCartDisplay();
 }
 
-updateCartDisplay();
-document.getElementById('cartModal').style.display = 'block';
-}
-
-function joinGuestlist() {
-const name = prompt('Enter your name for guestlist:');
-if (name) {
-document.getElementById('successMessage').textContent = `Welcome to the guestlist, ${name}! Arrive before 11PM for free entry.`;
-document.getElementById('successModal').style.display = 'block';
-}
+function joinGuestlist(eventName) {
+  guestlistEvent = eventName;
+  document.getElementById('guestEventName').textContent =
+    'Event: ' + eventName;
+  openGuestModal();
 }
 
 function updateCartDisplay() {
-const cartItems = document.getElementById('cartItems');
-const cartTotal = document.getElementById('cartTotal');
+  const cartItems = document.getElementById('cartItems');
+  const cartCount = document.getElementById('cartCount');
+  const cartTotal = document.getElementById('cartTotal');
 
-if (cart.length === 0) {
-cartItems.innerHTML = '
-Your cart is empty
-';
-cartTotal.textContent = '0';
-return;
+  cartItems.innerHTML = '';
+
+  let total = 0;
+  cart.forEach((item, index) => {
+    total += item.price;
+    const div = document.createElement('div');
+    div.className = 'cart-item';
+    div.innerHTML = `
+      <span>${item.name} – ₱${item.price}</span>
+      <button onclick="removeFromCart(${index})">Remove</button>
+    `;
+    cartItems.appendChild(div);
+  });
+
+  cartCount.textContent = cart.length;
+  cartTotal.textContent = total;
 }
 
-cartItems.innerHTML = cart.map(item => `
-
-
-${item.name}
-
-$${item.price} x ${item.quantity}
-
-Remove
-
-`).join('');
-
-const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-cartTotal.textContent = total;
-}
-
-function removeFromCart(ticketName) {
-cart = cart.filter(item => item.name !== ticketName);
-updateCartDisplay();
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  updateCartDisplay();
 }
 
 function checkout() {
-if (cart.length === 0) return;
+  if (cart.length === 0) {
+    alert('Your cart is empty.');
+    return;
+  }
+  alert('Checkout successful! Thank you for booking with NexusEvents.');
+  cart = [];
+  updateCartDisplay();
+  closeModal();
+}
 
-const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-document.getElementById('successMessage').textContent = `Order successful! Total: $${total}. Check your email for tickets.`;
-document.getElementById('successModal').style.display = 'block';
-cart = [];
+function openCart() {
+  document.getElementById('cartModal').style.display = 'flex';
+}
+
+function openGuestModal() {
+  document.getElementById('guestModal').style.display = 'flex';
 }
 
 function closeModal() {
-document.getElementById('cartModal').style.display = 'none';
-document.getElementById('successModal').style.display = 'none';
+  document.getElementById('cartModal').style.display = 'none';
+  document.getElementById('guestModal').style.display = 'none';
 }
 
-// Close modal when clicking outside
-window.onclick = function(event) {
-const cartModal = document.getElementById('cartModal');
-const successModal = document.getElementById('successModal');
+function addToGuestlist() {
+  const name = document.getElementById('guestName').value.trim();
+  const email = document.getElementById('guestEmail').value.trim();
 
-if (event.target === cartModal) {
-cartModal.style.display = 'none';
-}
-if (event.target === successModal) {
-successModal.style.display = 'none';
-}
+  if (!name || !email) {
+    alert('Please enter your name and email.');
+    return;
+  }
+
+  alert(`You have been added to the guestlist for ${guestlistEvent}!`);
+  document.getElementById('guestName').value = '';
+  document.getElementById('guestEmail').value = '';
+  closeModal();
 }
 
-window.addEventListener('scroll', function() {
-const navbar = document.querySelector('.navbar');
-if (window.scrollY > 100) {
-navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-navbar.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.2)';
-} else {
-navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.1)';
-}
-});
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', function (e) {
-e.preventDefault();
-const target = document.querySelector
-
+// Open cart when clicking top cart button
+document.getElementById('cartButton').onclick = openCart;
