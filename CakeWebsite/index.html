@@ -4,113 +4,93 @@
   <meta charset="UTF-8">
   <title>Sweet Bliss Cakes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css.style">
 </head>
 <body>
 
-  <header class="navbar">
-    <div class="logo">Sweet Bliss</div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#menu">Menu</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">Sweet Bliss</div>
+      <nav class="topnav">
+        <a href="#">Cakes</a>
+        <a href="#">Gelato</a>
+        <a href="#">Discounts</a>
+      </nav>
+      <div class="icons">
+        <span>🔍</span>
+        <span>👤</span>
+        <span>🛒</span>
+      </div>
+    </div>
   </header>
 
   <main>
 
-    <!-- HERO SECTION -->
-    <section id="home" class="hero">
-      <div class="hero-text">
-        <h1>Freshly Baked Cakes Every Day</h1>
-        <p>Delight in every slice, made with love and the finest ingredients.</p>
-        <a href="#menu" class="btn">View Menu</a>
-      </div>
-      <div class="hero-image">
-        <!-- Hero cake image from Unsplash -->
-        <img
-          src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=900&q=80"
-          alt="Beautiful cake on a stand">
+    <!-- PAGE TITLE + FILTERS (like screenshot) -->
+    <section class="page-header">
+      <h1>Cakes</h1>
+      <div class="filter-row">
+        <div class="chips">
+          <button class="chip chip-active">All</button>
+          <button class="chip">New</button>
+          <button class="chip">Best Seller</button>
+          <button class="chip">Cakes</button>
+          <button class="chip">Premium Gelato</button>
+        </div>
+        <div class="sort">
+          <label for="sort">Sort</label>
+          <select id="sort">
+            <option>Featured</option>
+            <option>Lowest Price</option>
+            <option>Highest Price</option>
+          </select>
+        </div>
       </div>
     </section>
 
-    <!-- MENU SECTION -->
-    <section id="menu" class="section">
-      <h2>Our Best Sellers</h2>
-      <div class="cards">
-        <article class="card">
-          <!-- Chocolate cake image -->
-          <img
-            src="https://images.unsplash.com/photo-1542826438-1c162fb3edb8?auto=format&fit=crop&w=700&q=80"
-            alt="Chocolate cake">
+    <!-- PRODUCT GRID using your existing idea -->
+    <section class="product-section">
+      <div class="product-grid">
+        <article class="product-card">
+          <div class="product-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1542826438-1c162fb3edb8?auto=format&fit=crop&w=800&q=80"
+                 alt="Chocolate cake">
+          </div>
           <h3>Chocolate Indulgence</h3>
-          <p>Rich, moist chocolate layers with silky ganache.</p>
+          <p>Rich chocolate layers with silky ganache.</p>
           <span class="price">₱750</span>
         </article>
 
-        <article class="card">
-          <!-- Red velvet cake image -->
-          <img
-            src="https://images.unsplash.com/photo-1586985289906-406988974504?auto=format&fit=crop&w=700&q=80"
-            alt="Red velvet cake">
+        <article class="product-card">
+          <div class="product-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1586985289906-406988974504?auto=format&fit=crop&w=800&q=80"
+                 alt="Red velvet cake">
+          </div>
           <h3>Red Velvet Dream</h3>
           <p>Classic red velvet with cream cheese frosting.</p>
           <span class="price">₱850</span>
         </article>
 
-        <article class="card">
-          <!-- Strawberry cake image -->
-          <img
-            src="https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?auto=format&fit=crop&w=700&q=80"
-            alt="Strawberry shortcake">
+        <article class="product-card">
+          <div class="product-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?auto=format&fit=crop&w=800&q=80"
+                 alt="Strawberry cake">
+          </div>
           <h3>Strawberry Shortcake</h3>
-          <p>Light sponge cake with fresh strawberries and cream.</p>
+          <p>Light sponge with fresh strawberries and cream.</p>
           <span class="price">₱800</span>
         </article>
-      </div>
-    </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="section section-light">
-      <div class="about-grid">
-        <div>
-          <h2>About Sweet Bliss</h2>
-          <p>
-            Sweet Bliss is a neighborhood cake shop specializing in custom cakes,
-            cupcakes, and pastries for every occasion.
-          </p>
-          <p>
-            From birthdays to weddings, we bake everything fresh daily using
-            premium ingredients.
-          </p>
-        </div>
-        <div class="about-image-wrapper">
-          <!-- Baking / baker image -->
-          <img
-            src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80"
-            alt="Baker decorating a cake">
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="section">
-      <h2>Visit or Contact Us</h2>
-      <div class="contact-grid">
-        <div>
-          <h3>Store Hours</h3>
-          <p>Mon – Sun: 9:00 AM – 8:00 PM</p>
-        </div>
-        <div>
-          <h3>Location</h3>
-          <p>123 Sweet Street, Calamba, Laguna</p>
-        </div>
-        <div>
-          <h3>Contact</h3>
-          <p>Phone: 0912 345 6789</p>
-          <p>Email: sweetblisscakes@gmail.com</p>
-        </div>
+        <article class="product-card">
+          <div class="product-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=800&q=80"
+                 alt="Mango cake">
+          </div>
+          <h3>Mango Delight</h3>
+          <p>Soft chiffon topped with sweet mangoes.</p>
+          <span class="price">₱820</span>
+        </article>
       </div>
     </section>
 
