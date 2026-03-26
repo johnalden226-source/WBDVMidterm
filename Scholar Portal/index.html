@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang=”en”>
+<head>
+  <meta charset=”UTF-8” />
+  <meta name=”viewport” content=”width=device-width, initial-scale=1.0” />
+  <title>Student Schedule Form (A5 Landscape)</title>
+
+  <style>
+  
+    @page{
+      Size: A5 landscape;
+      Margin: 6mm;
+    }
+
+    @media print{
+      Body{
+        Background:#fff;
+        Padding:0;
+        Margin:0;
+      }
+      .page{
+        Box-shadow:none !important;
+        Border:1px solid #000;
+        Width:auto !important;
+        Max-width:none !important;
+        Margin:0 !important;
+      }
+    }
+
+ 
+    Body{
+      Margin:0;
+      Padding:14px;
+      Font-family: Arial, Helvetica, sans-serif;
+      Background:#f3f3f3;
+      Color:#111;
+    }
+
+    .page{
+      Width: 100%;
+      Max-width: 980px;
+      Margin: 0 auto;
+      Background:#fff;
+      Border:2px solid #111;
+      Padding: 10px 10px 12px 10px;
+      Box-sizing:border-box;
+    }
+
+    .top-row{
+      Display:flex;
+      Justify-content:space-between;
+      Align-items:flex-start;
+      Gap:12px;
+    }
+
+    .block{
+      Flex:1;
+    }
+
+    .right-top{
+      Text-align:right;
+      Font-size:10px;
+      Line-height:1.25;
+      White-space:nowrap;
+    }
+
+    .label-line{
+      Display:grid;
+      Grid-template-columns: 90px 10px 1fr;
+      Gap:6px;
+      Margin: 1px 0;
+      Font-size: 11px;
+      Line-height:1.2;
+    }
+
+    .label{
+      Font-weight:700;
+    }
+
+    .value{
+      Font-weight:700;
+    }
+
+    .course-line{
+      Display:grid;
+      Grid-template-columns: 95px 10px 1fr;
+      Gap:6px;
+      Margin: 1px 0;
+      Font-size: 11px;
+      Line-height:1.2;
+    }
+
+    Hr.thick{
+      Border:none;
+      Height:2px;
+      Background:#111;
+      Margin: 6px 0 6px 0;
+    }
+
+    Table{
+      Width:100%;
+      Border-collapse:collapse;
+      Font-size:10px;
+    }
+
+    Thead th{
+      Text-align:left;
+      Font-weight:800;
+      Padding:4px 4px;
+      Border-bottom:2px solid #111;
+      Vertical-align:bottom;
+    }
+
+    Tbody td{
+      Padding:3px 4px;
+      Border-bottom:1px solid #c9c9c9;
+      Vertical-align:top;
+    }
+
+    .center{
+      Text-align:center;
+    }
+
+    .col-code{ width: 78px; }
+    .col-title{ width: 250px; }
+    .col-sched{ width: 165px; }
+    .col-sec{ width: 150px; }
+    .col-lec{ width: 70px; }
+    .col-total{ width: 65px; }
+    .col-taken{ width: 65px; }
+
+    .total-load{
+      Margin-top:6px;
+      Text-align:center;
+      Font-size:11px;
+      Font-weight:800;
+    }
+
+    .bottom-row{
+      Display:flex;
+      Justify-content:space-between;
+      Gap:12px;
+      Margin-top:8px;
+    }
+
+    .bottom-box{
+      Flex:1;
+      Border:1px solid #111;
+      Padding:6px;
+      Box-sizing:border-box;
+      Border-radius:6px;
+    }
+
+    .bottom-box .label-line{
+      Grid-template-columns: 110px 10px 1fr;
+      Font-size:10px;
+      Margin:1px 0;
+    }
+
+    .plan-title{
+      Font-weight:900;
+      Font-size:11px;
+      Margin:0 0 4px 0;
+    }
+
+    .note{
+      Margin-top:4px;
+      Font-size:10px;
+      Line-height:1.2;
+    }
+
+    .footer{
+      Margin-top:6px;
+      Text-align:center;
+      Font-size:9px;
+      Color:#333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class=”page”>
+    <div class=”top-row”>
+      <div class=”block”>
+        <div class=”label-line”>
+          <div class=”label”>Student ID</div><div>:</div><div class=”value”>01250007292</div>
+        </div>
+        <div class=”label-line”>
+          <div class=”label”>Student Name</div><div>:</div><div class=”value”>JOHN ALDEN DAVID CRUZ</div>
+        </div>
+        <div class=”label-line”>
+          <div class=”label”>Student Type</div><div>:</div><div class=”value”>- Regular</div>
+        </div>
+      </div>
+
+      <div class=”block”>
+        <div class=”course-line”>
+          <div class=”label”>Course / Major</div><div>:</div><div class=”value”>Bachelor of Science in Information Technology</div>
+        </div>
+        <div class=”course-line”>
+          <div class=”label”>Year Level</div><div>:</div><div class=”value”>First Year</div>
+        </div>
+        <div class=”course-line”>
+          <div class=”label”>Semester, AY</div><div>:</div><div class=”value”>Second Semester, AY 2025-2026</div>
+        </div>
+      </div>
+
+      <div class=”right-top”>
+        <div><b>Date Enrolled:</b> Jan 03, 2026</div>
+        <div><b>Date Printed:</b> Jan 10, 2026 05:59 PM</div>
+      </div>
+    </div>
+
+    <hr class=”thick”>
+
+    <table>
+      <thead>
+        <tr>
+          <th class=”col-code”>SUBJECT<br>CODE</th>
+          <th class=”col-title”>SUBJECT TITLE</th>
+          <th class=”col-sched”>SCHEDULE</th>
+          <th class=”col-sec”>SECTION / ROOM</th>
+          <th class=”col-lec center”>LEC/LAB<br>UNITS</th>
+          <th class=”col-total center”>TOTAL<br>UNITS</th>
+          <th class=”col-taken center”>UNITS<br>TAKEN</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>CRWT111</td>
+          <td>CRITICAL READING, WRITING AND THINKING</td>
+          <td>F 04:50PM-07:50PM</td>
+          <td>BSIT 1-Y2-5-PJP 305</td>
+          <td class=”center”>3.0/0.0</td>
+          <td class=”center”>3.0</td>
+          <td class=”center”>3.0</td>
+        </tr>
+
+        <tr>
+          <td>INPR111</td>
+          <td>INTERMEDIATE PROGRAMMING W/LAB</td>
+          <td>M 04:50PM-06:50PM / 01:30PM-04:30PM (lab)</td>
+          <td>BSIT 1-Y2-5-TAM CL4 (lab), TAM CL1</td>
+          <td class=”center”>2.0/1.0</td>
+          <td class=”center”>3.0</td>
+          <td class=”center”>3.0</td>
+        </tr>
+
+        <tr>
+          <td>MATM111</td>
+          <td>MATHEMATICS IN THE MODERN WORLD</td>
+          <td>F 10:20AM-01:20PM</td>
+          <td>BSIT 1-Y2-5-PJP 305</td>
+          <td class=”center”>3.0/0.0</td>
+          <td class=”center”>3.0</td>
+          <td class=”center”>3.0</td>
+        </tr>
+
+        <tr>
+          <td>NSTP112</td>
+          <td>NATIONAL SERVICE TRAINING PROGRAM 2 – CIVIC WELFARE TRAINING SERVICES</td>
+          <td>W 07:00AM-10:00AM</td>
+          <td>BSIT 1-Y2-5-PJP 305</td>
+          <td class=”center”>0.0/0.0</td>
+          <td class=”center”>0.0</td>
+          <td class=”center”>0.0</td>
+        </tr>
+
+        <tr>
+          <td>PHED122</td>
+          <td>PATHFIT2: EXERCISE-BASED FITNESS ACTIVITIES</td>
+          <td>W 11:20AM-01:20PM</td>
+          <td>BSIT 1-Y2-5-RISE TOWER</td>
+          <td class=”center”>2.0/0.0</td>
+          <td class=”center”>2.0</td>
+          <td class=”center”>2.0</td>
+        </tr>
+
+        <tr>
+          <td>PCDL111</td>
+          <td>PC ASSEMBLY, TROUBLESHOOTING, AND MAINTENANCE w/ DIGITAL LOGICS</td>
+          <td>TH 01:30PM-04:30PM</td>
+          <td>BSIT 1-Y2-5-TAM 501</td>
+          <td class=”center”>3.0/0.0</td>
+          <td class=”center”>3.0</td>
+          <td class=”center”>3.0</td>
+        </tr>
+
+        <tr>
+          <td>PURC111</td>
+          <td>PURPOSIVE COMMUNICATION</td>
+          <td>F 01:30PM-04:30PM</td>
+          <td>BSIT 1-Y2-5-PJP 305</td>
+          <td class=”center”>3.0/0.0</td>
+          <td class=”center”>3.0</td>
+          <td class=”center”>3.0</td>
+        </tr>
+
+        <tr>
+          <td>VRTS112</td>
+          <td>VERITAS ET MISERICORDIA 2</td>
+          <td>S 03:30PM-04:30PM</td>
+          <td>BSIT 1-Y2-5-OCR</td>
+          <td class=”center”>1.0/0.0</td>
+          <td class=”center”>1.0</td>
+          <td class=”center”>1.0</td>
+        </tr>
+
+        <tr>
+          <td>WBDV111</td>
+          <td>WEB DEVELOPMENT W/ LAB</td>
+          <td>TH 10:20AM-12:20PM / 07:00AM-10:00AM (lab)</td>
+          <td>BSIT 1-Y2-5-TAM CL2 (lab), TAM 504</td>
+          <td class=”center”>2.0/1.0</td>
+          <td class=”center”>3.0</td>
+          <td class=”center”>3.0</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class=”total-load”>TOTAL LOAD UNITS : 21</div>
+
+    <div class=”bottom-row”>
+      <div class=”bottom-box”>
+        <div class=”label-line”><div class=”label”>TOTAL ASSESSMENT</div><div>:</div><div class=”value”>P 36,505.00</div></div>
+        <div class=”label-line”><div class=”label”>OLD ACCOUNTS</div><div>:</div><div class=”value”>P 0.00</div></div>
+        <div class=”label-line”><div class=”label”>PAYMENT MODE</div><div>:</div><div class=”value”>PLAN B</div></div>
+        <div class=”label-line”><div class=”label”>AMOUNT PAID</div><div>:</div><div class=”value”>P 1,482.00</div></div>
+        <div class=”label-line”><div class=”label”>DATE PAID</div><div>:</div><div class=”value”>01/08/2026</div></div>
+        <div class=”label-line”><div class=”label”>PAYMENT TYPE</div><div>:</div><div class=”value”>CASH</div></div>
+        <div class=”label-line”><div class=”label”>REFERENCE NUMBER</div><div>:</div><div class=”value”>E339069</div></div>
+      </div>
+
+      <div class=”bottom-box”>
+        <div class=”plan-title”>PLAN B:</div>
+        <div class=”label-line”><div class=”label”>PRELIM (Feb 02, 2026)</div><div>:</div><div class=”value”>P 10,506.90</div></div>
+        <div class=”label-line”><div class=”label”>MIDTERM (Mar 16, 2026)</div><div>:</div><div class=”value”>P 12,258.05</div></div>
+        <div class=”label-line”><div class=”label”>FINALS (Apr 30, 2026)</div><div>:</div><div class=”value”>P 12,258.05</div></div>
+        <div class=”label-line”><div class=”label”>TOTAL AMOUNT DUE</div><div>:</div><div class=”value”>P 35,023.00</div></div>
+        <div class=”label-line”><div class=”label”><b>TOTAL BALANCE DUE</b></div><div>:</div><div class=”value”><b>P 35,023.00</b></div></div>
+        <div class=”note”>E-mail: jdcruz7292val@student.fatima.edu.ph</div>
+      </div>
+    </div>
+
+    <div class=”footer”>This is a sample HTML recreation of the schedule/assessment layout.</div>
+  </div>
+</body>
+</html>ns: 110px 10px 1fr;
+      Font-size:10px;
+      Margin:1px 0;
+    }
+
+    .plan-title{
+      Font-weight:900;
+      Font-size:11px;
+      Margin:0 0 4px 0;
+    }
+
+    .note{
+      Margin-top:4px;
+      Font-size:10px;
+      Line-height:1.2;
+    }
+
+    .footer{
+      Margin-top:6px;
+      Text-align:center;
+      Font-size:9px;
+      Color:#333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class=”page”>
+    <div class=”top-row”>
+      <div class=”block”>
+        <div class=”label-line”>
+          <div class=”label”>Student ID</div><div>:</div><div class=”value”>01250007292</div>
+        </div>
+        <div class=”label-line”>
+          <div class=”label”>Student Name</div><div>:</div><div class=”value”>JOHN ALDEN DAVID CRUZ</div>
+        </div>
+        <div class=”label-line”>
+          <div class=”label”>Student Type</div><div>:</div><div class=”value”>- Regular</div>
+        </div>
+      </div>
+
+      <div class=”block”>
+        <div class=”course-line”>
+          <div class=”label”>Course / Major</div><div>:</div><div class=”value”>Bachelor of Science in Information Technology</div>
+        </div>
+        <div class=”course-line”>
+          <div class=”label”>Year Level</div><div>:</div><div class=”value”>First Year</div>
+        </div>
+        <div class=”course-line”>
+          <div class=”label”>Semester, AY</div><div>:</div><div class=”value”>Second Semester, AY 2025-2026</div>
+        </div>
+      </div>
+
+      <div class=”right-top”>
+        <div><b>Date Enrolled:</b> Jan 03, 2026</div>
+        <div><b>Date Printed:</b> Jan 10, 2026 05:59 PM</div>
+      </div>
+    </div>
+
+    <hr class=”thick”>
+
+    <table>
+      <thead>
+        <tr>
+          <th class=”col-code”>SUBJECT<br>CODE</th>
+          <th class=”col-title”>SUBJECT TITLE</th>
+          <th class=”col-sched”>SCHEDULE</th>
+          <th class=”col-sec”>SECTION / ROOM</th>
+          <th class=”col-lec center”>LEC/LAB<br>UNITS</th>
+          <th class=”col-total center”>TOTAL<br>UNITS</th>
+          <th class=”col-taken center”>UNITS<br>TAKEN</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>CRWT111</td>
+          <td>CRITICAL READING, WRITING AND THINKING</td>
+          <td>F 04:50PM-07:50PM</td>
+          <td>BSIT 1-Y2-5-PJP 305</td>
+          <td class=”center”>3.0/0.0</td>
+          <td class=”center”>3.0</td>
+          <td class=”center”>3.0</td>
+        </tr>
+
+        <tr>
+          <td>INPR111</td>
+          <td>INTERMEDIATE PROGRAMMING W/LAB</td>
+          <td>M 04:50PM-06:50PM / 01:30PM-04:30PM (lab)</td>
+          <td>BSIT 1-Y2-5-TAM CL4 (lab), TAM CL1</td>
+          <td class=”center”>2.0/1.0</td>
+          <td class=”center”>3.0</td>
+          <td class=”center”>3.0</td>
+        </tr>
+
+        <tr>
+          <td>MATM111</td>
+          <td>MATHEMATICS IN THE MODERN WORLD</td>
+          <td>F 10:20AM-01:20PM</td>
+          <td>BSIT 1-Y2-5-PJP 305</td>
+          <td class=”center”>3.0/0.0</td>
+          <td class=”center”>3.0</td>
+          <td class=”center”>3.0</td>
+        </tr>
+
+        <tr>
+          <td>NSTP112</td>
+          <td>NATIONAL SERVICE TRAINING PROGRAM 2 – CIVIC WELFARE TRAINING SERVICES</td>
+          <td>W 07:00AM-10:00AM</td>
+          <td>BSIT 1-Y2-5-PJP 305</td>
+          <td class=”center”>0.0/0.0</td>
+          <td class=”center”>0.0</td>
+          <td class=”center”>0.0</td>
+        </tr>
+
+        <tr>
+          <td>PHED122</td>
+          <td>PATHFIT2: EXERCISE-BASED FITNESS ACTIVITIES</td>
+          <td>W 11:20AM-01:20PM</td>
+          <td>BSIT 1-Y2-5-RISE TOWER</td>
+          <td class=”center”>2.0/0.0</td>
+          <td class=”center”>2.0</td>
+          <td class=”center”>2.0</td>
+        </tr>
+
+        <tr>
+          <td>PCDL111</td>
+          <td>PC ASSEMBLY, TROUBLESHOOTING, AND MAINTENANCE w/ DIGITAL LOGICS</td>
+          <td>TH 01:30PM-04:30PM</td>
+          <td>BSIT 1-Y2-5-TAM 501</td>
+          <td class=”center”>3.0/0.0</td>
+          <td class=”center”>3.0</td>
+          <td class=”center”>3.0</td>
+        </tr>
+
+        <tr>
+          <td>PURC111</td>
+          <td>PURPOSIVE COMMUNICATION</td>
+          <td>F 01:30PM-04:30PM</td>
+          <td>BSIT 1-Y2-5-PJP 305</td>
+          <td class=”center”>3.0/0.0</td>
+          <td class=”center”>3.0</td>
+          <td class=”center”>3.0</td>
+        </tr>
+
+        <tr>
+          <td>VRTS112</td>
+          <td>VERITAS ET MISERICORDIA 2</td>
+          <td>S 03:30PM-04:30PM</td>
+          <td>BSIT 1-Y2-5-OCR</td>
+          <td class=”center”>1.0/0.0</td>
+          <td class=”center”>1.0</td>
+          <td class=”center”>1.0</td>
+        </tr>
+
+        <tr>
+          <td>WBDV111</td>
+          <td>WEB DEVELOPMENT W/ LAB</td>
+          <td>TH 10:20AM-12:20PM / 07:00AM-10:00AM (lab)</td>
+          <td>BSIT 1-Y2-5-TAM CL2 (lab), TAM 504</td>
+          <td class=”center”>2.0/1.0</td>
+          <td class=”center”>3.0</td>
+          <td class=”center”>3.0</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class=”total-load”>TOTAL LOAD UNITS : 21</div>
+
+    <div class=”bottom-row”>
+      <div class=”bottom-box”>
+        <div class=”label-line”><div class=”label”>TOTAL ASSESSMENT</div><div>:</div><div class=”value”>P 36,505.00</div></div>
+        <div class=”label-line”><div class=”label”>OLD ACCOUNTS</div><div>:</div><div class=”value”>P 0.00</div></div>
+        <div class=”label-line”><div class=”label”>PAYMENT MODE</div><div>:</div><div class=”value”>PLAN B</div></div>
+        <div class=”label-line”><div class=”label”>AMOUNT PAID</div><div>:</div><div class=”value”>P 1,482.00</div></div>
+        <div class=”label-line”><div class=”label”>DATE PAID</div><div>:</div><div class=”value”>01/08/2026</div></div>
+        <div class=”label-line”><div class=”label”>PAYMENT TYPE</div><div>:</div><div class=”value”>CASH</div></div>
+        <div class=”label-line”><div class=”label”>REFERENCE NUMBER</div><div>:</div><div class=”value”>E339069</div></div>
+      </div>
+
+      <div class=”bottom-box”>
+        <div class=”plan-title”>PLAN B:</div>
+        <div class=”label-line”><div class=”label”>PRELIM (Feb 02, 2026)</div><div>:</div><div class=”value”>P 10,506.90</div></div>
+        <div class=”label-line”><div class=”label”>MIDTERM (Mar 16, 2026)</div><div>:</div><div class=”value”>P 12,258.05</div></div>
+        <div class=”label-line”><div class=”label”>FINALS (Apr 30, 2026)</div><div>:</div><div class=”value”>P 12,258.05</div></div>
+        <div class=”label-line”><div class=”label”>TOTAL AMOUNT DUE</div><div>:</div><div class=”value”>P 35,023.00</div></div>
+        <div class=”label-line”><div class=”label”><b>TOTAL BALANCE DUE</b></div><div>:</div><div class=”value”><b>P 35,023.00</b></div></div>
+        <div class=”note”>E-mail: jdcruz7292val@student.fatima.edu.ph</div>
+      </div>
+    </div>
+
+    <div class=”footer”>This is a sample HTML recreation of the schedule/assessment layout.</div>
+  </div>
+</body>
+</html>
