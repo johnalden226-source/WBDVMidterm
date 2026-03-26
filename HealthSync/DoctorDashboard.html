@@ -1,0 +1,16 @@
+<?php include 'config.php'; ?>
+
+<h2>Doctor Dashboard</h2>
+
+<?php
+$result = $conn->query("SELECT * FROM appointments");
+
+while($row = $result->fetch_assoc()){
+echo "<p>
+{$row['patient_name']} - {$row['date']} - {$row['status']}
+
+<a href='approve.php?id={$row['id']}'>Approve</a> |
+<a href='reject.php?id={$row['id']}'>Reject</a>
+</p>";
+}
+?>
