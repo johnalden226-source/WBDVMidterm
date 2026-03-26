@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang=”en”>
+<head>
+    <meta charset=”UTF-8”>
+    <meta name=”viewport” content=”width=device-width, initial-scale=1.0”>
+    <title>ShiftGrid | Industrial Inventory</title>
+    <style>
+        :root {
+            --bg-dark: #1a1a1a;
+            --panel-bg: #2d3436;
+            --accent-gold: #ff9f43;
+            --text-light: #f5f6fa;
+            --action-red: #eb4d4b;
+            --border-gray: #4b6584;
+        }
+
+•	{ box-sizing: border-box; font-family: ‘Segoe UI’, sans-serif; }
+        
+        Body {
+            Margin: 0;
+            Background-color: var(--bg-dark);
+            Color: var(--text-light);
+            Display: flex;
+            Height: 100vh;
+        }
+
+        /* Sidebar & Barcode Logo */
+        Nav {
+            Width: 240px;
+            Background: #000;
+            Border-right: 2px solid var(--accent-gold);
+            Display: flex;
+            Flex-direction: column;
+            Padding: 20px;
+        }
+
+        .logo-container {
+            Text-align: center;
+            Margin-bottom: 40px;
+        }
+
+        .barcode-logo {
+            Font-size: 32px;
+            Letter-spacing: -2px;
+            Font-weight: 900;
+            Color: var(--accent-gold);
+            Border-bottom: 4px double var(--accent-gold);
+            Display: inline-block;
+        }
+
+        .nav-btn {
+            Background: transparent;
+            Border: 1px solid var(--border-gray);
+            Color: var(--text-light);
+            Padding: 12px;
+            Margin: 8px 0;
+            Cursor: pointer;
+            Text-align: left;
+            Text-transform: uppercase;
+            Font-weight: bold;
+            Transition: 0.3s;
+        }
+
+        .nav-btn:hover, .nav-btn.active {
+            Background: var(--accent-gold);
+            Color: #000;
+            Border-color: var(--accent-gold);
+        }
+
+        /* Main Content Area */
+        Main {
+            Flex-grow: 1;
+            Padding: 30px;
+            Overflow-y: auto;
+        }
+
+        .view { display: none; }
+        .view.active { display: block; animation: fadeIn 0.4s; }
+
+        @keyframes fadeIn {
+            From { opacity: 0; transform: translateY(10px); }
+            To { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Industrial UI Elements */
+        .status-card {
+            Background: var(--panel-bg);
+            Padding: 20px;
+            Border-left: 5px solid var(--accent-gold);
+            Margin-bottom: 20px;
+        }
+
+        .action-grid {
+            Display: grid;
+            Grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            Gap: 20px;
+        }
+
+        .action-btn {
+            Background: var(--action-red);
+            Color: white;
+            Border: none;
+            Padding: 20px;
+            Font-weight: 900;
+            Text-transform: uppercase;
+            Cursor: pointer;
+            Box-shadow: 4px 4px 0px #6d2121;
+        }
+
+        .action-btn:active {
+            Box-shadow: 0px 0px 0px;
+            Transform: translate(2px, 2px);
+        }
+
+        Table {
+            Width: 100%;
+            Border-collapse: collapse;
+            Margin-top: 20px;
+        }
+
+        Th { background: #000; text-align: left; padding: 15px; color: var(--accent-gold); }
+        Td { padding: 15px; border-bottom: 1px solid var(--border-gray); }
+
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class=”logo-container”>
+        <div class=”barcode-logo”>|| SHIFT || GRID ||</div>
+        <p style=”font-size: 10px; opacity: 0.6;”>V.3.0 INDUSTRIAL CORE</p>
+    </div>
+    <button class=”nav-btn active” onclick=”showView(‘stock’)”>Inventory Stock</button>
+    <button class=”nav-btn” onclick=”showView(‘suppliers’)”>Supplier Hub</button>
+    <button class=”nav-btn” onclick=”showView(‘orders’)”>Active Orders</button>
+    <button class=”nav-btn” onclick=”showView(‘reports’)”>Data Reports</button>
+</nav>
+
+<main>
+    <section id=”stock” class=”view active”>
+        <h2>Live Inventory Stock</h2>
+        <div class=”status-card”>SYSTEM STATUS: <span style=”color: var(--accent-gold);”>OPERATIONAL</span></div>
+        <div class=”action-grid”>
+            <button class=”action-btn”>Scan New Item</button>
+            <button class=”action-btn” style=”background: var(--border-gray); box-shadow: 4px 4px 0px #222;”>Audit Log</button>
+        </div>
+        <table>
+            <thead>
+                <tr><th>SKU</th><th>Item Name</th><th>Quantity</th><th>Location</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>#44-902</td><td>Steel Casing A1</td><td>450 units</td><td>Warehouse B</td></tr>
+                <tr><td>#22-110</td><td>Hydraulic Fluid</td><td>12 Drums</td><td>Zone 4</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id=”suppliers” class=”view”>
+        <h2>Supplier Directory</h2>
+        <div class=”status-card”>Verified Vendors: 14 Active</div>
+        <p>Manage your industrial chain contacts here.</p>
+    </section>
+
+    <section id=”orders” class=”view”>
+        <h2>Fulfillment & Orders</h2>
+        <div class=”status-card”>Pending Shipments: 04</div>
+        <button class=”action-btn”>Create New PO</button>
+    </section>
+
+    <section id=”reports” class=”view”>
+        <h2>Logistics Analysis</h2>
+        <div style=”height: 200px; background: #000; border: 1px solid var(--accent-gold); display: flex; align-items: center; justify-content: center;”>
+            <p>[ DATA VISUALIZATION PLACEHOLDER ]</p>
+        </div>
+    </section>
+</main>
+
+<script>
+    Function showView(viewId) {
+   
+        Document.querySelectorAll(‘.view’).forEach(view => view.classList.remove(‘active’));
+        
+        Document.querySelectorAll(‘.nav-btn’).forEach(btn => btn.classList.remove(‘active’));
+        
+        
+        Document.getElementById(viewId).classList.add(‘active’);
+        
+        Event.currentTarget.classList.add(‘active’);
+    }
+</script>
+
+</body>
+</html>
+
