@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CartNova - Landscape Site Map (Word/PDF Ready)</title>
+    <style>
+        @page {
+            size: A4 landscape;
+            margin: 15mm;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .sitemap {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 3em;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.3em;
+            margin-bottom: 40px;
+        }
+        
+        .flow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 35px;
+        }
+        
+        .node {
+            width: 160px;
+            height: 160px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            border: 5px solid;
+            font-size: 1em;
+        }
+        
+        .home { 
+            background: linear-gradient(145deg, #f39c12, #e67e22); 
+            border-color: #d68910;
+            width: 200px;
+            height: 200px;
+            font-size: 1.2em;
+        }
+        
+        .nav { 
+            background: linear-gradient(145deg, #3498db, #2980b9); 
+            border-color: #2980b9;
+            width: 130px;
+            height: 130px;
+            font-size: 0.95em;
+        }
+        
+        .shop { 
+            background: linear-gradient(145deg, #27ae60, #229954); 
+            border-color: #219150;
+        }
+        
+        .track { 
+            background: linear-gradient(145deg, #e74c3c, #c0392b); 
+            border-color: #c0392b;
+        }
+        
+        .cart-details { 
+            background: linear-gradient(145deg, #9b59b6, #8e44ad); 
+            border-color: #8e44ad;
+            width: 120px;
+            height: 120px;
+            font-size: 0.9em;
+        }
+        
+        .level1 {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .level2 {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+        }
+        
+        .arrow {
+            width: 0;
+            height: 0;
+            border-left: 18px solid transparent;
+            border-right: 18px solid transparent;
+            border-top: 30px solid #f39c12;
+            margin: 0 auto;
+        }
+        
+        .arrow-down {
+            border-top: none;
+            border-bottom: 30px solid #f39c12;
+        }
+        
+        .arrow-blue { border-bottom-color: #3498db !important; }
+        .arrow-green { border-bottom-color: #27ae60 !important; }
+        .arrow-purple { border-bottom-color: #9b59b6 !important; }
+        
+        .line {
+            width: 5px;
+            height: 70px;
+            background: #f39c12;
+            margin: 0 auto;
+            border-radius: 3px;
+        }
+        
+        .line-blue { background: #3498db; }
+        .line-green { background: #27ae60; }
+        .line-purple { background: #9b59b6; }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 45px;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 3px solid #ddd;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.1em;
+        }
+        
+        .legend-box {
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            border: 3px solid #333;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        .footer-info {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 2px solid #ddd;
+            color: #666;
+            font-size: 1em;
+        }
+        
+        @media print {
+            body { background: white !important; }
+            .sitemap { box-shadow: none; margin: 10px; }
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+        }
+        
+        @media (max-width: 1200px) {
+            .level1 { flex-direction: column; align-items: center; gap: 20px; }
+            .level2 { flex-direction: column; align-items: center; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="sitemap">
+        <h1>🛒 CartNova</h1>
+        <p class="subtitle">E-Commerce Website Site Map</p>
+        
+        <div class="flow">
+            <!-- Home -->
+            <div class="node home">
+                🏠<br>
+                <strong>HOME</strong>
+            </div>
+            
+            <!-- Arrow 1 -->
+            <div>
+                <div class="arrow arrow-down"></div>
+                <div class="line"></div>
+            </div>
+            
+            <!-- Level 1 Navigation -->
+            <div class="level1">
+                <div class="node nav">
+                    🛍️<br>
+                    Shop
+                </div>
+                <div class="node nav">
+                    📦<br>
+                    Track Order
+                </div>
+                <div class="node nav">
+                    👤<br>
+                    Login
+                </div>
+            </div>
+            
+            <!-- Arrow 2 to Shop Details -->
+            <div style="margin-top: 15px;">
+                <div class="arrow arrow-down arrow-green"></div>
+                <div class="line line-green"></div>
+            </div>
+            
+            <!-- Level 2 Shop Details -->
+            <div class="level2">
+                <div class="node shop">
+                    📱<br>
+                    Electronics
+                </div>
+                <div class="node shop">
+                    👟<br>
+                    Shoes
+                </div>
+                <div class="node shop">
+                    🎧<br>
+                    Accessories
+                </div>
+                <div class="node cart-details">
+                    🛒<br>
+                    Cart Items
+                </div>
+            </div>
+            
+            <!-- Arrow 3 to Track -->
+            <div style="margin-top: 20px;">
+                <div class="arrow arrow-down arrow-blue"></div>
+                <div class="line line-blue"></div>
+            </div>
+            
+            <!-- Footer/Other -->
+            <div class="node track">
+                📋<br>
+                <strong>Track<br>Order</strong>
+            </div>
+        </div>
+        
+        <!-- Legend -->
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-box" style="background: linear-gradient(145deg, #f39c12, #e67e22);"></div>
+                <span>Home</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box" style="background: linear-gradient(145deg, #3498db, #2980b9);"></div>
+                <span>Navigation</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box" style="background: linear-gradient(145deg, #27ae60, #229954);"></div>
+                <span>Shop/Categories</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box" style="background: linear-gradient(145deg, #e74c3c, #c0392b);"></div>
+                <span>Track Order</span>
+            </div>
+        </div>
+        
+        <div class="footer-info">
+            CartNova E-Commerce • Simple Shopping Experience
+        </div>
+    </div>
+</body>
+</html>

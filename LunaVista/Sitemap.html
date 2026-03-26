@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luna Vista Resort - Site Map</title>
+    <style>
+        @page {
+            size: A4 landscape;
+            margin: 20mm;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 30px;
+            background: #f0f4f8;
+        }
+        
+        .sitemap {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 2.8em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+        
+        .flow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .node {
+            width: 140px;
+            height: 140px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 15px;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            border: 4px solid;
+        }
+        
+        .home { background: #3498db; border-color: #2980b9; }
+        .nav { background: #ecf0f1; color: #2c3e50; border-color: #bdc3c7; width: 120px; height: 120px; font-size: 0.9em; }
+        .res { background: #27ae60; border-color: #219150; }
+        .form { background: #95a5a6; color: white; border-color: #7f8c8d; width: 110px; height: 110px; font-size: 0.85em; }
+        .footer { background: #2c3e50; border-color: #34495e; width: 160px; height: 160px; font-size: 1.1em; }
+        
+        .level1 {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .level2 {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .arrow {
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 25px solid #3498db;
+            margin: 0 auto;
+        }
+        
+        .arrow-down {
+            border-top: none;
+            border-bottom: 25px solid #3498db;
+        }
+        
+        .arrow-green {
+            border-bottom-color: #27ae60 !important;
+        }
+        
+        .line {
+            width: 4px;
+            height: 60px;
+            background: #3498db;
+            margin: 0 auto;
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+        }
+        
+        .legend-box {
+            width: 25px;
+            height: 25px;
+            border-radius: 5px;
+            border: 2px solid #333;
+        }
+        
+        @media print {
+            body { background: white; }
+            .sitemap { box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="sitemap">
+        <h1>🌙 Luna Vista Resort</h1>
+        <p class="subtitle">Website Site Map</p>
+        
+        <div class="flow">
+            <!-- Home -->
+            <div class="node home">
+                🏠<br>
+                <strong>HOME</strong>
+            </div>
+            
+            <!-- Arrow 1 -->
+            <div class="arrow-down"></div>
+            <div class="line"></div>
+            
+            <!-- Level 1 Navigation -->
+            <div class="level1">
+                <div class="node nav">🏨<br>Rooms</div>
+                <div class="node nav">⭐<br>Amenities</div>
+                <div class="node res">
+                    📝<br>
+                    <strong>Reservations</strong>
+                </div>
+                <div class="node nav">📞<br>Contact</div>
+            </div>
+            
+            <!-- Arrow 2 -->
+            <div style="margin-top: 20px;">
+                <div class="arrow-down arrow-green"></div>
+                <div class="line" style="background: #27ae60;"></div>
+            </div>
+            
+            <!-- Level 2 Form Details -->
+            <div class="level2">
+                <div class="node form">👤<br>Guest Info</div>
+                <div class="node form">📅<br>Dates</div>
+                <div class="node form">👥<br>Guests</div>
+                <div class="node form">💬<br>Requests</div>
+            </div>
+            
+            <!-- Arrow 3 -->
+            <div style="margin-top: 25px;">
+                <div class="arrow-down"></div>
+                <div class="line"></div>
+            </div>
+            
+            <!-- Footer -->
+            <div class="node footer">
+                📄<br>
+                <strong>CONTACT<br>& FOOTER</strong>
+            </div>
+        </div>
+        
+        <!-- Legend -->
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-box" style="background: #3498db;"></div>
+                Home / Primary
+            </div>
+            <div class="legend-item">
+                <div class="legend-box" style="background: #ecf0f1; border-color: #bdc3c7; color: #2c3e50;"></div>
+                Navigation
+            </div>
+            <div class="legend-item">
+                <div class="legend-box" style="background: #27ae60;"></div>
+                Reservations
+            </div>
+            <div class="legend-item">
+                <div class="legend-box" style="background: #2c3e50;"></div>
+                Footer
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px; color: #666; font-size: 0.9em;">
+            lunavistaresort@gmail.com • 0945 326 2596 • © 2026
+        </div>
+    </div>
+</body>
+</html>
