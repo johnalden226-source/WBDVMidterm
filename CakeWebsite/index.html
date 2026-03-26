@@ -1,69 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Velvet Crust</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Sweet Bliss Cakes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Rename css.style to style.css in GitHub, or keep css.style and match href -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-<h1>The Velvet Crust</h1>
-<p>Elegant Cakes for Every Celebration</p>
-</header>
+  <header class="navbar">
+    <div class="logo">Sweet Bliss</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<nav>
-<a href="#">Home</a>
-<a href="#">About</a>
-<a href="#">Menu</a>
-<a href="#">Gallery</a>
-<a href="#">Order</a>
-<a href="#">Contact</a>
-</nav>
+  <main>
 
-<section class="hero">
-<h2>Welcome to The Velvet Crust</h2>
-<p>Delicious cakes for birthdays, weddings, and special occasions.</p>
-</section>
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+      <div class="hero-text">
+        <h1>Freshly Baked Cakes Every Day</h1>
+        <p>Delight in every slice, made with love and the finest ingredients.</p>
+        <a href="#menu" class="btn">View Menu</a>
+      </div>
+      <div class="hero-image">
+        <!-- Put your cake image in the same folder as index.html and name it cake-hero.jpg -->
+        <img src="cake-hero.jpg" alt="Delicious layered cake">
+      </div>
+    </section>
 
-<section class="cakes">
-<div class="cake">
-<img src="cake1.jpg">
-<h3>Red Velvet Cake</h3>
-<p>₱950</p>
-</div>
+    <!-- MENU SECTION -->
+    <section id="menu" class="section">
+      <h2>Our Best Sellers</h2>
+      <div class="cards">
+        <article class="card">
+          <img src="chocolate-cake.jpg" alt="Chocolate cake">
+          <h3>Chocolate Indulgence</h3>
+          <p>Rich, moist chocolate layers with silky ganache.</p>
+          <span class="price">₱750</span>
+        </article>
 
-<div class="cake">
-<img src="cake2.jpg">
-<h3>Chocolate Dream Cake</h3>
-<p>₱900</p>
-</div>
+        <article class="card">
+          <img src="redvelvet-cake.jpg" alt="Red velvet cake">
+          <h3>Red Velvet Dream</h3>
+          <p>Classic red velvet with cream cheese frosting.</p>
+          <span class="price">₱850</span>
+        </article>
 
-<div class="cake">
-<img src="cake3.jpg">
-<h3>Strawberry Delight</h3>
-<p>₱920</p>
-</div>
-</section>
+        <article class="card">
+          <img src="strawberry-cake.jpg" alt="Strawberry shortcake">
+          <h3>Strawberry Shortcake</h3>
+          <p>Light sponge cake with fresh strawberries and cream.</p>
+          <span class="price">₱800</span>
+        </article>
+      </div>
+    </section>
 
-<section class="order">
-<h2>Order Your Cake</h2>
-<form>
-<input type="text" placeholder="Your Name"><br>
-<input type="email" placeholder="Email"><br>
-<input type="text" placeholder="Cake Type"><br>
-<input type="date"><br>
-<textarea placeholder="Message on Cake"></textarea><br>
-<button type="submit">Submit Order</button>
-</form>
-</section>
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section section-light">
+      <div class="about-grid">
+        <div>
+          <h2>About Sweet Bliss</h2>
+          <p>
+            Sweet Bliss is a neighborhood cake shop specializing in custom cakes,
+            cupcakes, and pastries for every occasion.
+          </p>
+          <p>
+            From birthdays to weddings, we bake everything fresh daily using
+            premium ingredients.
+          </p>
+        </div>
+        <div class="about-image-wrapper">
+          <img src="baker.jpg" alt="Baker decorating a cake">
+        </div>
+      </div>
+    </section>
 
-<footer>
-<p>The Velvet Crust Cake Shop</p>
-<p>Email: thevelvetcrust@gmail.com</p>
-</footer>
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section">
+      <h2>Visit or Contact Us</h2>
+      <div class="contact-grid">
+        <div>
+          <h3>Store Hours</h3>
+          <p>Mon – Sun: 9:00 AM – 8:00 PM</p>
+        </div>
+        <div>
+          <h3>Location</h3>
+          <p>123 Sweet Street, Calamba, Laguna</p>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p>Phone: 0912 345 6789</p>
+          <p>Email: sweetblisscakes@gmail.com</p>
+        </div>
+      </div>
+    </section>
 
-<script src="script.js"></script>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Sweet Bliss Cakes. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
