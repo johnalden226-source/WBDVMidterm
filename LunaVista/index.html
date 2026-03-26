@@ -1,0 +1,382 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+line-height: 1.6;
+color: #333;
+background-color: #f9f9f9;
+}
+
+/* Header & Navigation */
+header {
+background-color: #2c3e50;
+color: white;
+padding: 1rem 0;
+position: sticky;
+top: 0;
+z-index: 1000;
+box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.container {
+width: 90%;
+max-width: 1200px;
+margin: 0 auto;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.logo {
+font-size: 1.8rem;
+font-weight: bold;
+color: #ecf0f1;
+text-decoration: none;
+letter-spacing: 2px;
+}
+
+nav ul {
+list-style: none;
+display: flex;
+}
+
+nav ul li {
+margin-left: 20px;
+}
+
+nav ul li a {
+color: white;
+text-decoration: none;
+font-size: 1rem;
+transition: color 0.3s;
+}
+
+nav ul li a:hover {
+color: #3498db;
+}
+
+/* Hero Section */
+.hero {
+background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+background-size: cover;
+background-position: center;
+height: 80vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+color: white;
+}
+
+.hero h1 {
+font-size: 3.5rem;
+margin-bottom: 1rem;
+}
+
+.hero p {
+font-size: 1.2rem;
+margin-bottom: 2rem;
+}
+
+.btn {
+background-color: #3498db;
+color: white;
+padding: 10px 25px;
+text-decoration: none;
+border-radius: 5px;
+font-weight: bold;
+transition: background 0.3s;
+}
+
+.btn:hover {
+background-color: #2980b9;
+}
+
+/* Reservation Section */
+.reservation-section {
+padding: 4rem 0;
+background-color: white;
+}
+
+.reservation-container {
+max-width: 800px;
+margin: 0 auto;
+background: #fff;
+padding: 2rem;
+border-radius: 10px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.reservation-container h2 {
+text-align: center;
+margin-bottom: 2rem;
+color: #2c3e50;
+}
+
+.form-group {
+margin-bottom: 1.5rem;
+}
+
+.form-group label {
+display: block;
+margin-bottom: 0.5rem;
+font-weight: bold;
+color: #555;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+width: 100%;
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 5px;
+font-size: 1rem;
+}
+
+.form-row {
+display: flex;
+gap: 1rem;
+}
+
+.form-row .form-group {
+flex: 1;
+}
+
+.submit-btn {
+width: 100%;
+padding: 12px;
+background-color: #27ae60;
+color: white;
+border: none;
+border-radius: 5px;
+font-size: 1.1rem;
+cursor: pointer;
+transition: background 0.3s;
+}
+
+.submit-btn:hover {
+background-color: #219150;
+}
+
+/* Contact Section */
+.contact-section {
+padding: 4rem 0;
+background-color: #f4f4f4;
+text-align: center;
+}
+
+.contact-grid {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 2rem;
+margin-top: 2rem;
+}
+
+.contact-card {
+background: white;
+padding: 2rem;
+border-radius: 8px;
+width: 300px;
+box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.contact-card h3 {
+color: #2c3e50;
+margin-bottom: 1rem;
+}
+
+.contact-card a {
+color: #3498db;
+text-decoration: none;
+}
+
+/* Footer */
+footer {
+background-color: #2c3e50;
+color: white;
+text-align: center;
+padding: 1.5rem 0;
+margin-top: auto;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+.container {
+flex-direction: column;
+}
+nav ul {
+margin-top: 1rem;
+flex-direction: column;
+text-align: center;
+}
+nav ul li {
+margin: 10px 0;
+}
+.hero h1 {
+font-size: 2.5rem;
+}
+.form-row {
+flex-direction: column;
+gap: 0;
+}
+}
+
+
+
+
+
+
+
+
+LUNA VISTA
+
+
+
+Home
+Rooms
+Amenities
+Reservations
+Contact Us
+
+
+
+
+
+
+
+
+
+Welcome to Luna Vista Resort
+
+Experience tranquility in the heart of Calamba.
+
+Book Now
+
+
+
+
+
+
+Make a Reservation
+
+
+Fill out the form below to request a booking. We will contact you shortly to confirm availability.
+
+
+
+
+Top of Form
+
+
+
+Full Name
+
+
+
+
+Phone Number
+
+
+
+
+
+
+Check-in Date
+
+
+
+
+Check-out Date
+
+
+
+
+
+Number of Guests
+
+1 Person
+2 People
+3 People
+4 People
+5+ People
+
+
+
+
+Special Requests
+
+
+
+
+Send Reservation Request
+Bottom of Form
+
+
+
+
+
+
+
+
+Get in Touch
+
+For inquiries outside of the reservation form:
+
+
+
+
+
+Email Us
+
+For reservations and inquiries:
+
+
+
+lunavistaresort@gmail.com
+
+
+
+
+
+Call Us
+
+Direct Line for inquiries:
+
+
+
+0945 326 2596
+
+
+
+
+
+Visit Us
+
+Our physical location:
+
+
+
+Pansol Brgy, 4027
+Calamba, Philippines
+
+
+
+
+
+
+
+
+
+© 2023 Luna Vista Resort. All Rights Reserved.
+
+
+
+
+
