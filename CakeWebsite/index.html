@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sweet Bliss Cakes</title>
+  <title>Sweet Bliss – Gusto Card Style</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css.style">
 </head>
@@ -25,75 +25,110 @@
     </div>
   </header>
 
-  <main>
+  <!-- PRODUCT LAYOUT LIKE GUSTO CARD -->
+  <main class="product-page">
+    <section class="product-layout">
 
-    <!-- PAGE TITLE + FILTERS (like screenshot) -->
-    <section class="page-header">
-      <h1>Cakes</h1>
-      <div class="filter-row">
-        <div class="chips">
-          <button class="chip chip-active">All</button>
-          <button class="chip">New</button>
-          <button class="chip">Best Seller</button>
-          <button class="chip">Cakes</button>
-          <button class="chip">Premium Gelato</button>
-        </div>
-        <div class="sort">
-          <label for="sort">Sort</label>
-          <select id="sort">
-            <option>Featured</option>
-            <option>Lowest Price</option>
-            <option>Highest Price</option>
-          </select>
+      <!-- LEFT: IMAGE -->
+      <div class="product-media">
+        <div class="product-image-wrapper">
+          <img
+            src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=900&q=80"
+            alt="Cake product">
         </div>
       </div>
-    </section>
 
-    <!-- PRODUCT GRID using your existing idea -->
-    <section class="product-section">
-      <div class="product-grid">
-        <article class="product-card">
-          <div class="product-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1542826438-1c162fb3edb8?auto=format&fit=crop&w=800&q=80"
-                 alt="Chocolate cake">
-          </div>
-          <h3>Chocolate Indulgence</h3>
-          <p>Rich chocolate layers with silky ganache.</p>
-          <span class="price">₱750</span>
-        </article>
+      <!-- RIGHT: INFO + FORM (incorporates your index fields) -->
+      <div class="product-info">
 
-        <article class="product-card">
-          <div class="product-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1586985289906-406988974504?auto=format&fit=crop&w=800&q=80"
-                 alt="Red velvet cake">
-          </div>
-          <h3>Red Velvet Dream</h3>
-          <p>Classic red velvet with cream cheese frosting.</p>
-          <span class="price">₱850</span>
-        </article>
+        <p class="breadcrumb">Home / Cakes</p>
+        <h1 class="product-title">Sweet Bliss Celebration Cake</h1>
+        <p class="product-subtitle">Perfect for birthdays, anniversaries, and every special moment.</p>
 
-        <article class="product-card">
-          <div class="product-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?auto=format&fit=crop&w=800&q=80"
-                 alt="Strawberry cake">
-          </div>
-          <h3>Strawberry Shortcake</h3>
-          <p>Light sponge with fresh strawberries and cream.</p>
-          <span class="price">₱800</span>
-        </article>
+        <p class="product-price">₱1,600.00</p>
 
-        <article class="product-card">
-          <div class="product-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=800&q=80"
-                 alt="Mango cake">
+        <!-- short perks text similar to Gusto card page, keeps your idea -->
+        <div class="product-perks">
+          <h2>Perks & Inclusions</h2>
+          <ul>
+            <li>Free dedication text on the cake.</li>
+            <li>Choice of bundle type (Whole, Mini, or Gelato).</li>
+            <li>Exclusive discounts on your next purchase.</li>
+          </ul>
+        </div>
+
+        <!-- FORM (your original inputs, styled like Gusto form) -->
+        <form class="product-form">
+          <div class="form-row">
+            <label for="quantity">Quantity</label>
+            <input id="quantity" name="quantity" type="number" value="1" min="1">
           </div>
-          <h3>Mango Delight</h3>
-          <p>Soft chiffon topped with sweet mangoes.</p>
-          <span class="price">₱820</span>
-        </article>
+
+          <div class="form-row">
+            <label for="freebie">Freebie*</label>
+            <select id="freebie" name="freebie">
+              <option>-- Choose Freebie --</option>
+              <option>Junior Gelato (pickup only)</option>
+              <option>Dedication</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="dedication">Dedication Text</label>
+            <textarea id="dedication" name="dedication" rows="3" placeholder="Happy Birthday, ..."></textarea>
+          </div>
+
+          <div class="form-row">
+            <label for="name">Name*</label>
+            <input id="name" name="name" type="text" placeholder="Your full name">
+          </div>
+
+          <div class="form-row">
+            <label>Birthdate*</label>
+            <div class="birthdate-group">
+              <input type="number" min="1" max="12" placeholder="MM">
+              <span>/</span>
+              <input type="number" min="1" max="31" placeholder="DD">
+              <span>/</span>
+              <input type="number" min="1900" max="2100" placeholder="YYYY">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="bundle">Bundle Type*</label>
+            <select id="bundle" name="bundle">
+              <option>-- Choose Bundle Type --</option>
+              <option>Whole Cake Bundle</option>
+              <option>Mini Cake Bundle</option>
+              <option>Gelato Tub Bundle</option>
+              <option>Gelato Pint Bundle</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="wholeCake">Whole Cake*</label>
+            <select id="wholeCake" name="wholeCake">
+              <option>-- Choose Whole Cake --</option>
+              <option>Ube Cake Whole</option>
+              <option>Chocolate Java Whole</option>
+              <option>Mango Magnifico Whole</option>
+              <option>Midnight Dream Whole</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="bundleFreebie">Whole Cake Bundle Freebie*</label>
+            <select id="bundleFreebie" name="bundleFreebie">
+              <option>-- Choose Bundle Freebie --</option>
+              <option>₱300 Electronic Gift Cert</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-primary">Add to cart</button>
+        </form>
       </div>
-    </section>
 
+    </section>
   </main>
 
   <footer class="footer">
