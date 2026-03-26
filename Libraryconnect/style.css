@@ -1,0 +1,42 @@
+body {
+font-family: Arial, sans-serif;
+background-color: #f4f4f4;
+margin: 0;
+padding: 0;
+}
+
+nav {
+background-color: #333;
+color: white;
+padding: 15px;
+}
+
+nav ul {
+list-style-type: none;
+padding: 0;
+}
+
+nav ul li {
+display: inline;
+margin-right: 20px;
+}
+
+nav ul li a {
+color: white;
+text-decoration: none;
+}
+
+.button {
+background-color: #5c4d7d;
+color: white;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-family: 'Courier New', Courier, monospace;
+font-size: 16px;
+}
+
+.button:hover {
+background-color: #7a6b9d;
+}
