@@ -14,15 +14,15 @@ body {
   font-family: "Poppins", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  background: #ffffff;
   color: #333;
+  background: #ffffff;
 }
 
-/* TOP PINK BAR (like Caramia) */
+/* TOP BAR – solid pink like Caramia */
 .topbar {
   background: #d96ad1;
   color: white;
-  padding: 1.1rem 2.5rem;
+  padding: 1rem 2.5rem;
 }
 
 .topbar-inner {
@@ -41,121 +41,154 @@ body {
 .topnav a {
   color: white;
   text-decoration: none;
-  margin: 0 0.8rem;
-  font-size: 0.98rem;
+  margin: 0 0.9rem;
+  font-size: 0.95rem;
 }
 
 .icons span {
   margin-left: 0.7rem;
 }
 
-/* PAGE HEADER (title + chips + sort) */
-.page-header {
-  max-width: 1100px;
-  margin: 2.5rem auto 0;
-  padding: 0 1.75rem;
-  text-align: center;
-}
-
-.page-header h1 {
-  font-size: 2.3rem;
-  margin-bottom: 1.5rem;
-}
-
-.filter-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-/* Chips */
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  justify-content: center;
-}
-
-.chip {
-  padding: 0.45rem 1.3rem;
-  border-radius: 999px;
-  border: 1px solid #d96ad1;
-  background: #ffffff;
-  color: #d96ad1;
-  font-size: 0.85rem;
-  cursor: pointer;
-}
-
-.chip-active {
-  background: #d96ad1;
-  color: #fff;
-}
-
-/* Sort */
-.sort {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-}
-
-.sort select {
-  padding: 0.35rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid #ddd;
-  font-size: 0.9rem;
-}
-
-/* PRODUCT GRID */
-.product-section {
+/* MAIN PRODUCT LAYOUT */
+.product-page {
   max-width: 1200px;
-  margin: 2rem auto 3rem;
-  padding: 0 1.75rem 3rem;
+  margin: 2.5rem auto 3rem;
+  padding: 0 1.75rem;
 }
 
-.product-grid {
+.product-layout {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 1.75rem;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+  gap: 3rem;
+  align-items: flex-start;
 }
 
-/* Card style similar to screenshot */
-.product-card {
-  background: #fce4ff;
+/* LEFT: IMAGE */
+.product-media {
+  position: sticky;
+  top: 5.5rem;
+}
+
+.product-image-wrapper {
   border-radius: 24px;
-  padding: 1.3rem 1.3rem 1.5rem;
-  text-align: center;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  overflow: hidden;
+  background: #fde9ff;
 }
 
-.product-img-wrapper {
-  border-radius: 18px;
-  overflow: hidden;
+.product-image-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* RIGHT: INFO + FORM */
+.product-info {
+  max-width: 550px;
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  color: #999;
+  margin-bottom: 0.4rem;
+}
+
+.product-title {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+.product-subtitle {
+  font-size: 0.98rem;
+  color: #666;
   margin-bottom: 0.9rem;
 }
 
-.product-card img {
-  width: 100%;
-  height: 210px;
-  object-fit: cover;
-}
-
-.product-card h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.3rem;
-  color: #5b265b;
-}
-
-.product-card p {
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-}
-
-.price {
-  font-weight: 700;
+.product-price {
+  font-size: 1.6rem;
+  font-weight: 600;
   color: #c02880;
+  margin-bottom: 1.3rem;
+}
+
+/* PERKS TEXT BLOCK */
+.product-perks {
+  margin-bottom: 1.8rem;
+}
+
+.product-perks h2 {
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+}
+
+.product-perks ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+  font-size: 0.92rem;
+}
+
+/* FORM (Gusto-style) */
+.product-form {
+  border-top: 1px solid #eee;
+  padding-top: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.form-row label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.product-form input[type="number"],
+.product-form input[type="text"],
+.product-form select,
+.product-form textarea {
+  padding: 0.55rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+.product-form textarea {
+  resize: vertical;
+}
+
+/* Birthdate triple input */
+.birthdate-group {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.birthdate-group input {
+  width: 4rem;
+  text-align: center;
+}
+
+/* BUTTON */
+.btn-primary {
+  margin-top: 0.7rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: 999px;
+  border: none;
+  background: #c02880;
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background: #a51f6c;
 }
 
 /* FOOTER */
@@ -168,22 +201,27 @@ body {
 }
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .product-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .product-media {
+    position: static;
+  }
+
+  .product-page {
+    margin-top: 1.8rem;
+  }
+}
+
+@media (max-width: 600px) {
   .topbar {
-    padding: 0.9rem 1.25rem;
+    padding: 0.9rem 1.2rem;
   }
 
   .topbar-inner {
     flex-direction: row;
     gap: 0.5rem;
-  }
-
-  .filter-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .page-header {
-    text-align: left;
   }
 }
