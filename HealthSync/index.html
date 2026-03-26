@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HealthSync Clinic</title>
+
+<style>
+body {
+font-family: Arial;
+margin: 0;
+background: #f4f8fb;
+}
+
+/* Header */
+header {
+background: #0a74da;
+color: white;
+padding: 15px;
+display: flex;
+justify-content: space-between;
+}
+
+nav a {
+margin: 0 10px;
+cursor: pointer;
+
+color: white;
+text-decoration: none;
+}
+
+/* Sections */
+.section {
+display: none;
+padding: 30px;
+text-align: center;
+}
+
+.active {
+display: block;
+}
+
+/* Buttons */
+button {
+padding: 10px;
+margin: 10px;
+background: #0a74da;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+input, select {
+padding: 10px;
+margin: 10px;
+width: 200px;
+}
+
+/* Cards */
+.card {
+background: white;
+padding: 20px;
+margin: 10px auto;
+width: 250px;
+border-radius: 10px;
+}
+
+/* Verified Badge */
+.verified {
+background: green;
+padding: 5px 10px;
+border-radius: 20px;
+font-size: 12px;
+color: white;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h2>HealthSync Clinic</h2>
+<nav>
+<a onclick="showSection('home')">Home</a>
+<a onclick="showSection('book')">Book</a>
+<a onclick="showSection('staff')">Staff</a>
+<a onclick="showSection('history')">History</a>
+<a onclick="showSection('availability')">Availability</a>
+<a onclick="showSection('login')">Login</a>
+</nav>
+</header>
+
+<!-- HOME -->
+<div id="home" class="section active">
+<h1>Your Health, Connected & Trusted</h1>
+<p>Book appointments, check availability, and manage your medical records easily.</p>
+<button onclick="showSection('book')">Book Appointment</button>
+<button onclick="showSection('login')">
+Register <span class="verified"> Verified</span>
+</button>
+</div>
+
+<!-- BOOK -->
+<div id="book" class="section">
+
+<h2>Book Appointment</h2>
+<input type="text" id="name" placeholder="Your Name"><br>
+<input type="date" id="date"><br>
+<select id="doctor">
+<option>Dr. Smith</option>
+<option>Dr. Cruz</option>
+</select><br>
+<button onclick="bookAppointment()">Submit</button>
+</div>
+
+<!-- STAFF -->
+<div id="staff" class="section">
+<h2>Our Doctors</h2>
+<div class="card">Dr. Smith - General Physician</div>
+<div class="card">Dr. Cruz - Pediatrician</div>
+</div>
+
+<!-- HISTORY -->
+<div id="history" class="section">
+<h2>Appointment History</h2>
+<div id="historyList"></div>
+</div>
+
+<!-- AVAILABILITY -->
+<div id="availability" class="section">
+<h2>Doctor Availability</h2>
+
+<button onclick="checkAvailability()">Check</button>
+<p id="availabilityResult"></p>
+</div>
+
+<!-- LOGIN -->
+<div id="login" class="section">
+<h2>Login</h2>
+<select id="role">
+<option>Patient</option>
+<option>Doctor</option>
+<option>Admin</option>
+</select><br>
+<input type="text" placeholder="Username"><br>
+<input type="password" placeholder="Password"><br>
+<button onclick="login()">Login</button>
+</div>
+
+<footer style="text-align:center; padding:10px;">
+© 2026 HealthSync Clinic | Trusted Medical Services
+</footer>
+
+<script>
+// Navigation
+function showSection(id) {
+document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+
+}
+
+// Booking function
+function bookAppointment() {
+let name = document.getElementById("name").value;
+let date = document.getElementById("date").value;
+let doctor = document.getElementById("doctor").value;
+
+if(name === "" || date === "") {
+alert("Please fill all fields!");
+return;
+}
+
+let appointment = `${name} booked with ${doctor} on ${date}`;
+
+let history = JSON.parse(localStorage.getItem("history")) || [];
+history.push(appointment);
+localStorage.setItem("history", JSON.stringify(history));
+
+alert("Appointment Booked!");
+}
+
+// Load History
+function loadHistory() {
+let history = JSON.parse(localStorage.getItem("history")) || [];
+let list = document.getElementById("historyList");
+
+list.innerHTML = history.map(item => `<div class="card">${item}</div>`).join("");
+}
+
+// Availability
+function checkAvailability() {
+document.getElementById("availabilityResult").innerText =
+"Doctors available today from 9 AM - 5 PM";
+}
+
+// Login simulation
+function login() {
+let role = document.getElementById("role").value;
+alert(role + " logged in successfully!");
+}
+
+// Auto load history when opened
+document.getElementById("history").addEventListener("click", loadHistory);
+</script>
+
+</body>
+</html>
