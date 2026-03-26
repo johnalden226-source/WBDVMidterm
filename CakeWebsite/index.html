@@ -1,139 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Sweet Bliss – Gusto Card Style</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css.style">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Velvet Crust</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f3f5;
+}
+
+/* HEADER */
+header {
+    background-color: #7b1e2b;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 42px;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* NAVBAR */
+nav {
+    background-color: #e4b9c0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 15px 0;
+    font-weight: bold;
+}
+
+nav a {
+    text-decoration: none;
+    color: #7b1e2b;
+    cursor: pointer;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* SECTIONS */
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #7b1e2b;
+}
+
+/* MENU CARDS */
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card h3 {
+    margin: 10px 0;
+}
+
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* ORDER FORM */
+form {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px;
+    background-color: #7b1e2b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5e1621;
+}
+
+/* FOOTER */
+footer {
+    background-color: #7b1e2b;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+</style>
+
 </head>
+
 <body>
 
-  <!-- TOP BAR -->
-  <header class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">Sweet Bliss</div>
-      <nav class="topnav">
-        <a href="#">Cakes</a>
-        <a href="#">Gelato</a>
-        <a href="#">Discounts</a>
-      </nav>
-      <div class="icons">
-        <span>🔍</span>
-        <span>👤</span>
-        <span>🛒</span>
-      </div>
+<header>
+    <h1>The Velvet Crust</h1>
+    <p>Elegant Cakes for Every Celebration</p>
+</header>
+
+<nav>
+    <a onclick="scrollToSection('home')">Home</a>
+    <a onclick="scrollToSection('about')">About</a>
+    <a onclick="scrollToSection('menu')">Menu</a>
+    <a onclick="scrollToSection('gallery')">Gallery</a>
+    <a onclick="scrollToSection('order')">Order</a>
+    <a onclick="scrollToSection('contact')">Contact</a>
+</nav>
+
+<section id="home">
+    <h2>Welcome to The Velvet Crust</h2>
+    <p>We create handcrafted cakes that bring sweetness to your special moments.</p>
+</section>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>At The Velvet Crust, we specialize in custom cakes made with love and premium ingredients. From birthdays to weddings, we design cakes that taste as good as they look.</p>
+</section>
+
+<section id="menu">
+    <h2>Our Menu</h2>
+    <div class="menu">
+        <div class="card">
+            <img src="https://source.unsplash.com/400x300/?chocolate-cake">
+            <h3>Chocolate Delight</h3>
+            <p>$25</p>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/400x300/?red-velvet-cake">
+            <h3>Red Velvet</h3>
+            <p>$30</p>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/400x300/?birthday-cake">
+            <h3>Birthday Special</h3>
+            <p>$35</p>
+        </div>
     </div>
-  </header>
+</section>
 
-  <!-- PRODUCT LAYOUT LIKE GUSTO CARD -->
-  <main class="product-page">
-    <section class="product-layout">
+<section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+        <img src="https://source.unsplash.com/300x300/?cake">
+        <img src="https://source.unsplash.com/300x300/?cupcakes">
+        <img src="https://source.unsplash.com/300x300/?wedding-cake">
+        <img src="https://source.unsplash.com/300x300/?dessert">
+    </div>
+</section>
 
-      <!-- LEFT: IMAGE -->
-      <div class="product-media">
-        <div class="product-image-wrapper">
-          <img
-            src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=900&q=80"
-            alt="Cake product">
-        </div>
-      </div>
+<section id="order">
+    <h2>Place an Order</h2>
+    <form onsubmit="submitOrder(event)">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="text" placeholder="Cake Type" required>
+        <textarea placeholder="Special Instructions"></textarea>
+        <button type="submit">Submit Order</button>
+    </form>
+</section>
 
-      <!-- RIGHT: INFO + FORM (incorporates your index fields) -->
-      <div class="product-info">
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: contact@velvetcrust.com</p>
+    <p>Phone: +123 456 7890</p>
+</section>
 
-        <p class="breadcrumb">Home / Cakes</p>
-        <h1 class="product-title">Sweet Bliss Celebration Cake</h1>
-        <p class="product-subtitle">Perfect for birthdays, anniversaries, and every special moment.</p>
+<footer>
+    <p>© 2026 The Velvet Crust. All rights reserved.</p>
+</footer>
 
-        <p class="product-price">₱1,600.00</p>
+<script>
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
 
-        <!-- short perks text similar to Gusto card page, keeps your idea -->
-        <div class="product-perks">
-          <h2>Perks & Inclusions</h2>
-          <ul>
-            <li>Free dedication text on the cake.</li>
-            <li>Choice of bundle type (Whole, Mini, or Gelato).</li>
-            <li>Exclusive discounts on your next purchase.</li>
-          </ul>
-        </div>
-
-        <!-- FORM (your original inputs, styled like Gusto form) -->
-        <form class="product-form">
-          <div class="form-row">
-            <label for="quantity">Quantity</label>
-            <input id="quantity" name="quantity" type="number" value="1" min="1">
-          </div>
-
-          <div class="form-row">
-            <label for="freebie">Freebie*</label>
-            <select id="freebie" name="freebie">
-              <option>-- Choose Freebie --</option>
-              <option>Junior Gelato (pickup only)</option>
-              <option>Dedication</option>
-            </select>
-          </div>
-
-          <div class="form-row">
-            <label for="dedication">Dedication Text</label>
-            <textarea id="dedication" name="dedication" rows="3" placeholder="Happy Birthday, ..."></textarea>
-          </div>
-
-          <div class="form-row">
-            <label for="name">Name*</label>
-            <input id="name" name="name" type="text" placeholder="Your full name">
-          </div>
-
-          <div class="form-row">
-            <label>Birthdate*</label>
-            <div class="birthdate-group">
-              <input type="number" min="1" max="12" placeholder="MM">
-              <span>/</span>
-              <input type="number" min="1" max="31" placeholder="DD">
-              <span>/</span>
-              <input type="number" min="1900" max="2100" placeholder="YYYY">
-            </div>
-          </div>
-
-          <div class="form-row">
-            <label for="bundle">Bundle Type*</label>
-            <select id="bundle" name="bundle">
-              <option>-- Choose Bundle Type --</option>
-              <option>Whole Cake Bundle</option>
-              <option>Mini Cake Bundle</option>
-              <option>Gelato Tub Bundle</option>
-              <option>Gelato Pint Bundle</option>
-            </select>
-          </div>
-
-          <div class="form-row">
-            <label for="wholeCake">Whole Cake*</label>
-            <select id="wholeCake" name="wholeCake">
-              <option>-- Choose Whole Cake --</option>
-              <option>Ube Cake Whole</option>
-              <option>Chocolate Java Whole</option>
-              <option>Mango Magnifico Whole</option>
-              <option>Midnight Dream Whole</option>
-            </select>
-          </div>
-
-          <div class="form-row">
-            <label for="bundleFreebie">Whole Cake Bundle Freebie*</label>
-            <select id="bundleFreebie" name="bundleFreebie">
-              <option>-- Choose Bundle Freebie --</option>
-              <option>₱300 Electronic Gift Cert</option>
-            </select>
-          </div>
-
-          <button type="submit" class="btn-primary">Add to cart</button>
-        </form>
-      </div>
-
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p>© 2026 Sweet Bliss Cakes. All rights reserved.</p>
-  </footer>
+function submitOrder(event) {
+    event.preventDefault();
+    alert("Thank you! Your order has been submitted.");
+}
+</script>
 
 </body>
 </html>
