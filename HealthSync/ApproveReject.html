@@ -1,0 +1,7 @@
+<?php
+include 'config.php';
+$id = $_GET['id'];
+
+$conn->query("UPDATE appointments SET status='approved' WHERE id=$id");
+header("Location: doctor.php");
+?>
